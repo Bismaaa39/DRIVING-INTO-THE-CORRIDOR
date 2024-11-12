@@ -1,0 +1,264 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mengatur Latar Belakang dengan Efek Blur */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #333;
+    position: relative;
+}
+
+/* Background blur dengan pseudo-element */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('WhatsApp\ Image\ 2024-11-06\ at\ 08.14.07_6561758f.jpg'); /* Path gambar lokal */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Efek blur */
+    z-index: -1; /* Membuat layer blur berada di belakang konten */
+    opacity: 0.7; /* Atur transparansi sesuai kebutuhan */
+}
+
+/* Header Film */
+.movie-header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #848484;
+    animation: fadeInDown 1s ease-out;
+}
+
+.movie-header h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.movie-header p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-style: italic;
+    color: #e0e0e0;
+}
+
+/* Poster Film */
+.movie-poster {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    margin: 10px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.movie-poster img {
+    width: 100%;
+    max-width: 600px; /* Maksimal lebar untuk menjaga kualitas */
+    height: auto; /* Menyesuaikan tinggi secara proporsional */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Informasi Film */
+.movie-info {
+    text-align: center;
+    padding: 15px;
+    margin: 10px;
+    font-size: 1.1em;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-out;
+}
+
+.movie-header h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.movie-header p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Tombol dengan animasi */
+.cta-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    background-color: #e50914;  /* Warna merah khas film */
+    border-radius: 5px;
+    border: 2px solid transparent;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Animasi Hover */
+.cta-button:hover {
+    background-color: #b20710;
+    color: #fff;
+    transform: scale(1.1);  /* Membesar sedikit */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    border-color: #fff; /* Border menjadi putih saat hover */
+}
+
+/* Animasi Fokus pada Tombol */
+.cta-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.7);
+}
+
+/* Animasi Button pada Awal Halaman */
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Menambahkan animasi saat pertama kali tombol muncul */
+.cta-button {
+    animation: buttonAnimation 1s ease-out;
+}
+
+/* Ucapan Terima Kasih */
+.thank-you-message {
+    text-align: center;
+    padding: 15px;
+    margin: 10px;
+    font-size: 1em;
+    color: white;
+    background: linear-gradient(135deg, #ff6b6b, #f06595);
+    border-radius: 8px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Animasi */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gaya Halaman Teaser */
+.teaser-container {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    background-color: #111;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.teaser-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #e50914; /* Warna khas film untuk menonjolkan judul */
+}
+
+.video-container {
+    width: 90%;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: zoomIn 1.2s ease-out;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.teaser-description {
+    font-size: 1.1em;
+    margin-top: 15px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #e50914;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #b20710;
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animasi Zoom In */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
